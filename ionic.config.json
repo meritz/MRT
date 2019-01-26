@@ -1,5 +1,7 @@
 {
   "name": "rmt",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+  { path: 'radio', loadChildren: './radio/radio.module#RadioPageModule' },
+  { path: 'dedicace', loadChildren: './dedicace/dedicace.module#DedicacePageModule' },
+  { path: 'donation', loadChildren: './donation/donation.module#DonationPageModule' },
+  { path: 'priere', loadChildren: './priere/priere.module#PrierePageModule' }
 ];
 
 @NgModule({

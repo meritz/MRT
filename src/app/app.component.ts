@@ -16,10 +16,31 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Radio',
+      url: '/radio',
+      icon: 'radio'
+    },
+    {
+      title: 'Dedicace',
+      url: '/dedicace',
+      icon: 'microphone'
+    },
+    {
+      title: 'Donation',
+      url: '/donation',
+      icon: 'card'
+    },
+    {
+      title: 'Priere',
+      url: '/priere',
+      icon: 'flame'
+    },
+    {
       title: 'List',
       url: '/list',
       icon: 'list'
     }
+
   ];
 
   constructor(
@@ -32,7 +53,8 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.styleBlackTranslucent();
+      this.statusBar.backgroundColorByHexString('#3171e0');
       this.splashScreen.hide();
     });
   }
