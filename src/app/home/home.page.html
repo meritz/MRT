@@ -18,8 +18,8 @@
       <ion-col size="3" size-sm>
         <div>
           <ion-fab>
-            <ion-fab-button color="light" (click)='startStopPlaying()' >
-              <ion-icon [name]="isPlaying ? 'pause' : 'play' "></ion-icon>
+            <ion-fab-button color="light" (click)='startStopPlaying(isPlaying)' >
+              <ion-icon [name]="isPlaying ? 'play' : 'pause' "></ion-icon>
                 <!-- <ion-icon name="radio"></ion-icon> -->
 
             </ion-fab-button>
@@ -29,7 +29,7 @@
       <ion-col size="3" size-sm>
         <div>
           <ion-fab>
-            <ion-fab-button color="light" href="/dedicace" >
+            <ion-fab-button color="light" >
                 <ion-icon name="microphone"></ion-icon>
             </ion-fab-button>
           </ion-fab>
@@ -86,14 +86,14 @@
     <ion-row>
       <ion-col>
         <div>
-            <ion-button (click)="play()" color="light">
+            <ion-button color="light">
                 <img src="./../../assets/imgs/md_5b0943670e52c.png">
             </ion-button>
         </div>
       </ion-col>
       <ion-col>
         <div>
-            <ion-button (click)="pause()" color="light" >
+            <ion-button color="light" >
                 <img src="./../../assets/imgs/store-apple.jpg" />
             </ion-button>
         </div>
