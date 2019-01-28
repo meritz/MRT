@@ -36,7 +36,7 @@ export class AppComponent {
       icon: 'flame'
     },
     {
-      title: 'List',
+      title: 'Musique',
       url: '/list',
       icon: 'list'
     }

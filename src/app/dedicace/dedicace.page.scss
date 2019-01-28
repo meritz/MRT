@@ -1,0 +1,29 @@
+
+// :host { // this is the page itself
+// 	background-color: green;
+
+// 	ion-header ion-toolbar::shadow {
+// 		--background: blue;
+// 	}
+
+// 	ion-content {
+// 		--background: red;
+// 	}
+// }
+
+:host { // this is the page itself
+	
+
+	ion-content {
+        --background: url(../../assets/imgs/devin-avery-552221-unsplash.jpg) no-repeat 100% 100%; 
+    }
+    
+
+
+    ion-textarea, ion-input{
+        border:outset 2px rgb(0, 0, 0);
+    }
+
+
+}
+

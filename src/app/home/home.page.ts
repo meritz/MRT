@@ -3,7 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { RadioService } from './../services/radio.service';
 import { NavController } from '@ionic/angular';
 
+import { Router } from '@angular/router';
+
 // import { RadioPage } from './../radio/radio.page';
+
 
 
 @Component({
@@ -17,7 +20,7 @@ export class HomePage implements OnInit {
   isPlaying;
   // anRadioPage: RadioPage;
 
-constructor( player: RadioService, public navCtrl: NavController) {
+constructor( player: RadioService, public navCtrl: NavController, private router: Router) {
   this.isPlaying = player;
 }
 
@@ -25,6 +28,17 @@ ngOnInit() {
 
 }
 
+opendedicace() {
+  this.router.navigate(['dedicace']);
+}
+
+opendonation() {
+  this.router.navigate(['donation']);
+}
+
+openpriere() {
+  this.router.navigate(['priere']);
+}
 
 // startStopPlaying () {
 //   // your logic to play pause

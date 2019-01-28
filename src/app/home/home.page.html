@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Aceuil
+      RM TOGO
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -29,7 +29,7 @@
       <ion-col size="3" size-sm>
         <div>
           <ion-fab>
-            <ion-fab-button color="light" >
+            <ion-fab-button color="light" (click)="opendedicace()">
                 <ion-icon name="microphone"></ion-icon>
             </ion-fab-button>
           </ion-fab>
@@ -38,7 +38,7 @@
       <ion-col size="3" size-sm>
         <div>
           <ion-fab>
-            <ion-fab-button color="light" href="/donation" >
+            <ion-fab-button color="light" (click)="opendonation()">
                 <ion-icon name="card"></ion-icon>
             </ion-fab-button>
           </ion-fab>
@@ -47,7 +47,7 @@
       <ion-col size="3" size-sm>
         <div>
           <ion-fab>
-            <ion-fab-button color="light" href="/priere">
+            <ion-fab-button color="light" (click)="openpriere()">
                 <ion-icon name="flame"></ion-icon>
             </ion-fab-button>
           </ion-fab>
@@ -55,7 +55,6 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
 
   <!-- <ion-list>
     <ion-item-divider>
