@@ -20,7 +20,9 @@ const routes: Routes = [
  },
   { path: 'dedicace', loadChildren: './dedicace/dedicace.module#DedicacePageModule' },
   { path: 'donation', loadChildren: './donation/donation.module#DonationPageModule' },
-  { path: 'priere', loadChildren: './priere/priere.module#PrierePageModule' }
+  { path: 'priere', loadChildren: './priere/priere.module#PrierePageModule' },  { path: 'modaltogocel', loadChildren: './modaltogocel/modaltogocel.module#ModaltogocelPageModule' },
+  { path: 'modalmoov', loadChildren: './modalmoov/modalmoov.module#ModalmoovPageModule' }
+
 ];
 
 @NgModule({

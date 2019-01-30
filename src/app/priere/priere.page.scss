@@ -2,7 +2,10 @@
 	
 
 	ion-content {
-        --background: url(../../assets/imgs/robin-benzrihem-640711-unsplash.jpg) no-repeat 100% 100%; 
+        --background: url(../../assets/imgs/imgmari.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover; 
     }
     
 

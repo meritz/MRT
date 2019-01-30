@@ -8,15 +8,59 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-avatar>
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
+  <ion-avatar>
+    <img src="./../../assets/imgs/imgmari.jpg">
+  </ion-avatar>
     
-    <ion-thumbnail>
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-thumbnail>
-</ion-content>
-<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4"  text-right>
+        ------------------
+      </ion-col>
+      <ion-col text-center>
+        DONATION
+      </ion-col>
+      <ion-col size="4" text-left>
+        ------------------
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
+  <p text-center>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Delectus culpa dolorum consectetur minus aut.
+  </p>
+
+  <ion-item-group>
+    <ion-item>
+      <ion-label position="floating">Phone</ion-label>
+      <ion-input type="tel" required></ion-input>
+    </ion-item>
   
-</ion-footer>
+    <ion-item>
+      <ion-label position="floating">montant</ion-label>
+      <ion-input type="number" required></ion-input>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+          <ion-thumbnail>
+            <img src="./../../assets/imgs/tg.togocel.tmoneyclient.png" (click)="togocelMrt()">
+          </ion-thumbnail>
+      </ion-col>
+      <ion-col>
+        <ion-thumbnail>
+          <img src="./../../assets/imgs/unnamed.jpg" (click)="moovMrt()">
+        </ion-thumbnail> </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+    <ion-button expand="full" (click)="donEnLigne()"> FAIRE DON EN LIGNE</ion-button>
+  
+
+</ion-content>
