@@ -40,25 +40,6 @@ openpriere() {
   this.router.navigate(['priere']);
 }
 
-// startStopPlaying () {
-//   // your logic to play pause
-//   if (this.isPlaying) {
-//     // pause here
-//     // this.pause();
-//     this.isPlaying.pause();
-//     // this.play();
-//   } else {
-//     // play here
-//     // this.play();
-//     // this.isPlaying.play();
-//     this.isPlaying.play().then(() => {
-//            console.log('Playing');
-//       });
-//     // this.pause();
-//     // console.log('Pause');
-//   }
-//   this.isPlaying = !this.isPlaying;
-// };
 
 startStopPlaying () {
   if (this.isPlaying) {
@@ -66,7 +47,7 @@ startStopPlaying () {
      console.log('playing');
     });
   } else {
-  this.isPlaying.pause = false;
+  this.isPlaying.pause(false);
   console.log('pause');
   }
   this.isPlaying = !this.isPlaying;

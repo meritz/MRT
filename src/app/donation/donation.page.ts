@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams, ModalController } from '@ionic/angular';
+import { NavController, NavParams, ModalController, AlertController } from '@ionic/angular';
 import { ModaltogocelPage } from '../modaltogocel/modaltogocel.page';
 import { ModalmoovPage } from '../modalmoov/modalmoov.page';
 
@@ -10,43 +10,61 @@ import { ModalmoovPage } from '../modalmoov/modalmoov.page';
 })
 export class DonationPage implements OnInit {
 
-  constructor(public modalCtrl: ModalController) { }
+  constructor(public modalCtrl: ModalController, private alertCtrl: AlertController) { }
 
   ngOnInit() {
   }
 
-//   async  togocelMrt() {
-//    // present the modal
-//   const modalElement = await this.modalCtrl.create({
-//     component: ModaltogocelPage
-//   });
-//   await modalElement.present();
-// console.log('togocel');
-//   }
 
   async togocelMrt() {
-    const modal = await this.modalCtrl.create({
-      component: ModaltogocelPage,
-      componentProps: {
-        foo: 'hello',
-        bar: 'world',
-      }
+    const alert = await this.alertCtrl.create({
+      header: 'Êtes-vous certain(e) de vouloir continuer ?',
+      inputs: [
+        {
+          name: 'code secret',
+          type: 'number',
+          placeholder: 'code de confirmation'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel'
+        },
+        {
+          text: 'Confirmer',
+          handler: () => console.log('Confirmé !')
+        }
+      ]
     });
-    await modal.present();
-    console.log('togocel');
+    alert.present();
   }
 
   async moovMrt() {
     // present the modal
-  const modalElement = await this.modalCtrl.create({
-    component: ModalmoovPage,
-    componentProps: {
-      foo: 'modeste',
-      bar: 'agbakou',
-    }
-  });
-  await modalElement.present();
-    console.log('moov');
+    const alert = await this.alertCtrl.create({
+      header: 'Êtes-vous certain(e) de vouloir continuer ?',
+      inputs: [
+        {
+          name: 'code secret',
+          type: 'number',
+          min: -4,
+          max: 4,
+          placeholder: 'code de confirmation'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel'
+        },
+        {
+          text: 'Confirmer',
+          handler: () => console.log('Confirmé !')
+        }
+      ]
+    });
+    alert.present();
   }
 
   donEnLigne() {
