@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RadioService } from './../services/radio.service';
 import { NavController } from '@ionic/angular';
 
 import { Router } from '@angular/router';
@@ -17,11 +16,11 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit {
 
 
-  isPlaying;
+
   // anRadioPage: RadioPage;
 
-constructor( player: RadioService, public navCtrl: NavController, private router: Router) {
-  this.isPlaying = player;
+constructor(  public navCtrl: NavController, private router: Router) {
+
 }
 
 ngOnInit() {
@@ -40,18 +39,22 @@ openpriere() {
   this.router.navigate(['priere']);
 }
 
-
-startStopPlaying () {
-  if (this.isPlaying) {
-    this.isPlaying.play().then(() => {
-     console.log('playing');
-    });
-  } else {
-  this.isPlaying.pause(false);
-  console.log('pause');
-  }
-  this.isPlaying = !this.isPlaying;
+openradio() {
+  this.router.navigate(['radio']);
 }
+
+
+// startStopPlaying () {
+//   if (this.isPlaying) {
+//     this.isPlaying.play().then(() => {
+//      console.log('playing');
+//     });
+//   } else {
+//   this.isPlaying.pause(false);
+//   console.log('pause');
+//   }
+//   this.isPlaying = !this.isPlaying;
+// }
 
 
 

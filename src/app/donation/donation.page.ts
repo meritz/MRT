@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, ModalController, AlertController } from '@ionic/angular';
-import { ModaltogocelPage } from '../modaltogocel/modaltogocel.page';
-import { ModalmoovPage } from '../modalmoov/modalmoov.page';
+
+import { CallNumber } from '@ionic-native/call-number/ngx';
 
 @Component({
   selector: 'app-donation',
@@ -10,7 +10,12 @@ import { ModalmoovPage } from '../modalmoov/modalmoov.page';
 })
 export class DonationPage implements OnInit {
 
-  constructor(public modalCtrl: ModalController, private alertCtrl: AlertController) { }
+  motantDon: number;
+  code: number;
+
+  constructor(public modalCtrl: ModalController,
+               private call: CallNumber,
+               private alertCtrl: AlertController) { }
 
   ngOnInit() {
   }
@@ -19,13 +24,6 @@ export class DonationPage implements OnInit {
   async togocelMrt() {
     const alert = await this.alertCtrl.create({
       header: 'Êtes-vous certain(e) de vouloir continuer ?',
-      inputs: [
-        {
-          name: 'code secret',
-          type: 'number',
-          placeholder: 'code de confirmation'
-        }
-      ],
       buttons: [
         {
           text: 'Annuler',
@@ -33,7 +31,10 @@ export class DonationPage implements OnInit {
         },
         {
           text: 'Confirmer',
-          handler: () => console.log('Confirmé !')
+          handler: () =>{
+            this.callNumberT();
+            console.log('Confirmé !')
+          }
         }
       ]
     });
@@ -44,15 +45,6 @@ export class DonationPage implements OnInit {
     // present the modal
     const alert = await this.alertCtrl.create({
       header: 'Êtes-vous certain(e) de vouloir continuer ?',
-      inputs: [
-        {
-          name: 'code secret',
-          type: 'number',
-          min: -4,
-          max: 4,
-          placeholder: 'code de confirmation'
-        }
-      ],
       buttons: [
         {
           text: 'Annuler',
@@ -60,15 +52,37 @@ export class DonationPage implements OnInit {
         },
         {
           text: 'Confirmer',
-          handler: () => console.log('Confirmé !')
+          handler: () => {
+            this.callNumber();
+            console.log('Confirmé !');
+          }
         }
       ]
     });
     alert.present();
   }
 
+  async callNumber(): Promise<any> {
+    try {
+      await this.call.callNumber('*155*2*2*97595959*' + String(this.motantDon) + '*' + String(this.code) + '#' , true);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async callNumberT(): Promise<any> {
+    try {
+      await this.call.callNumber('*145*1*1*' + String(this.motantDon) + '*90757575*1*' + String(this.code) + '#' , true);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+
   donEnLigne() {
 
   }
+
+
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RadioService } from '../services/radio.service';
 
 @Component({
   selector: 'app-radio',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RadioPage implements OnInit {
 
-  constructor() { }
+  isPlaying;
+
+  constructor(player: RadioService) {
+    this.isPlaying = player;
+   }
 
   ngOnInit() {
   }
+
+
+
+  play() {
+  this.isPlaying.play().then(() => {
+    console.log('Playing');
+  });
+}
+
+pause() {
+  this.isPlaying.pause();
+  console.log('pause');
+}
 
 }
