@@ -11,27 +11,24 @@
     <ion-item>
       <ion-label>VOTRE MESSAGE</ion-label>
     </ion-item>
+  <form [formGroup]="createPriereForm" (submit)="createPriere()">
     <ion-item>
-      <ion-textarea rows="8" cols="70" maxlength="308" required type="text"></ion-textarea>
+      <ion-textarea rows="8" cols="70" maxlength="308" required type="text" formControlName="message"></ion-textarea>
     </ion-item>
     <ion-item>
         <ion-label position="floating">NOM</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" formControlName="nomEmet"></ion-input>
       </ion-item>
 
-    <ion-item>
-        <ion-label position="floating">PRENOM</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
 
     <ion-item>
       <ion-label position="floating">Phone</ion-label>
-      <ion-input type="tel" required></ion-input>
+      <ion-input type="tel" formControlName="tele" required></ion-input>
     </ion-item>
+    
+       <ion-button expand="full" type="submit" [disabled]="!createPriereForm.valid">ENVOI</ion-button>
+    </form>
 
-    
-       <ion-button expand="full">ENVOI</ion-button>
-    
 </ion-content>
 <ion-footer>
   

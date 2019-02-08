@@ -11,7 +11,12 @@ import { ModalmoovPageModule } from './modalmoov/modalmoov.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+// 
 import { CallNumber } from '@ionic-native/call-number/ngx';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment} from '../environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +27,11 @@ import { CallNumber } from '@ionic-native/call-number/ngx';
     AppRoutingModule,
     ModaltogocelPageModule,
     ModalmoovPageModule,
+    AngularFireModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.config),
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     StatusBar,
