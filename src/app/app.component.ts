@@ -35,11 +35,11 @@ export class AppComponent {
       url: '/priere',
       icon: 'flame',
     },
-    {
-      title: 'Emission',
-      url: '/list',
-      icon: 'recording',
-    }
+    // {
+    //   title: 'Emission',
+    //   url: '/list',
+    //   icon: 'recording',
+    // }
 
   ];
 

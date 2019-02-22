@@ -7,6 +7,7 @@ import { RadioService } from '../services/radio.service';
   styleUrls: ['./radio.page.scss'],
 })
 export class RadioPage implements OnInit {
+  public showToggle:boolean = false;
 
   isPlaying;
 
@@ -29,5 +30,15 @@ pause() {
   this.isPlaying.pause();
   console.log('pause');
 }
+
+toggle(){
+  if (this.showToggle === false) {
+    this.showToggle = true;
+  } else {
+  this.showToggle = false;
+  }
+}
+
+
 
 }

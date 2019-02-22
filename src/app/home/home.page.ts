@@ -3,10 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 import { Router } from '@angular/router';
-
-// import { RadioPage } from './../radio/radio.page';
-
-
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @Component({
   selector: 'app-home',
@@ -15,58 +12,41 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
+  text = '“ Rechercher son royaume et tout le reste sera ajouté à vous "(Lc 12, 31).';
+  url = 'https://donationafrica.radiomaria.org/togo/';
 
+  constructor(  public navCtrl: NavController, private router: Router, private socialSharing: SocialSharing) {
 
-  // anRadioPage: RadioPage;
+  }
 
-constructor(  public navCtrl: NavController, private router: Router) {
+  ngOnInit() {
 
-}
+  }
 
-ngOnInit() {
+  opendedicace() {
+    this.router.navigate(['dedicace']);
+  }
 
-}
+  opendonation() {
+    this.router.navigate(['donation']);
+  }
 
-opendedicace() {
-  this.router.navigate(['dedicace']);
-}
+  openpriere() {
+    this.router.navigate(['priere']);
+  }
 
-opendonation() {
-  this.router.navigate(['donation']);
-}
+  openradio() {
+    this.router.navigate(['radio']);
+  }
 
-openpriere() {
-  this.router.navigate(['priere']);
-}
-
-openradio() {
-  this.router.navigate(['radio']);
-}
-
-
-// startStopPlaying () {
-//   if (this.isPlaying) {
-//     this.isPlaying.play().then(() => {
-//      console.log('playing');
-//     });
-//   } else {
-//   this.isPlaying.pause(false);
-//   console.log('pause');
-//   }
-//   this.isPlaying = !this.isPlaying;
-// }
-
-
-
-//   play() {
-//   this.isPlaying.play().then(() => {
-//     console.log('Playing');
-//   });
-// }
-
-// pause = function() {
-//   this.isPlaying.pause();
-// };
+  async shareWhatsApp() {
+    // Text + Image or URL works
+    this.socialSharing.shareViaWhatsApp(this.text, null, this.url).then(() => {
+      // Success
+    }).catch((e) => {
+      // Error!
+    });
+  }
 
 }
 

@@ -10,26 +10,30 @@
 <ion-content >
 
     <ion-card>
-        <ion-card-header>
-          <ion-card-title> Radio MT Lome</ion-card-title>
-        </ion-card-header>
         <ion-card-content>
+          <ion-card-title> Radio MT Lome</ion-card-title>
          <ion-grid>
           <ion-row>
             <ion-col>
-              <ion-button expand="full" (click)="play()" >
-                <ion-icon name="play"></ion-icon>
-              </ion-button>
+              <ion-button (click)="pause(); toggle()" *ngIf="showToggle" >
+        <ion-icon  name="pause"></ion-icon>
+      </ion-button>
+    
+      <ion-button (click)="play(); toggle()" *ngIf="!showToggle" >
+        <ion-icon  name="play"></ion-icon>
+      </ion-button>
             </ion-col>
-            <ion-col>
-              <ion-button expand="full" (click)="pause()" >
-                <ion-icon name="pause"></ion-icon>
-              </ion-button>
-            </ion-col>
+          <ion-col>
+          <ion-button >
+            <ion-icon name="list"></ion-icon>
+          </ion-button>
+           </ion-col>
+
           </ion-row>
          </ion-grid>
         </ion-card-content>
       </ion-card>
-      
+
+     
 
 </ion-content>
